@@ -28,7 +28,7 @@
         "verdaccio-composer"
     ],
     "license": "MIT",
-    "repository": "<%= repository %>",
+    "repository": "https://github.com/fleetbase/verdaccio-composer-middleware",
     "author": "Ronald A. Richardson <ron@fleetbase.io>",
     "scripts": {
         "build": "tsc",
