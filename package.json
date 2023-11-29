@@ -2,8 +2,24 @@
     "name": "@fleetbase/verdaccio-composer-middleware",
     "version": "0.0.1",
     "description": "Middleware to handle composer dependency request.",
-    "main": "lib/src/index.js",
-    "types": "lib/src/index.d.ts",
+    "keywords": [
+        "composer",
+        "packagist",
+        "verdaccio-composer"
+    ],
+    "license": "MIT",
+    "repository": "https://github.com/fleetbase/verdaccio-composer-middleware",
+    "bugs": {
+        "url": "https://github.com/fleetbase/verdaccio-composer-middleware/issues"
+    },
+    "author": "Fleetbase Pte Ltd <hello@fleetbase.io>",
+    "scripts": {
+        "build": "tsc",
+        "test": "jest .",
+        "lint": "eslint \"**/*.{js,ts}\""
+    },
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
     "engines": {
         "node": ">=12"
     },
@@ -21,18 +37,5 @@
         "eslint": "8.21.0",
         "jest": "28.1.3",
         "typescript": "4.7.4"
-    },
-    "keywords": [
-        "composer",
-        "packagist",
-        "verdaccio-composer"
-    ],
-    "license": "MIT",
-    "repository": "https://github.com/fleetbase/verdaccio-composer-middleware",
-    "author": "Ronald A. Richardson <ron@fleetbase.io>",
-    "scripts": {
-        "build": "tsc",
-        "test": "jest .",
-        "lint": "eslint \"**/*.{js,ts}\""
     }
 }
