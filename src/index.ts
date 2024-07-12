@@ -21,6 +21,7 @@ export default class ComposerMiddleware implements IPluginMiddleware<CustomConfi
         router.get('/packages.json', async (req: Request, res: Response, next: NextFunction) => {
             try {
                 const packages = await this.s3Storage.getAllComposerJson();
+                this.logger.error({ packages }, 'Fetched all published packages: @{packages}');
                 res.json(packages);
             } catch (error) {
                 if (error instanceof Error) {
