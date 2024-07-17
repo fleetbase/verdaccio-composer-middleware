@@ -1,3 +1,5 @@
+require('module-alias/register');
+
 import { Logger, IPluginMiddleware, IBasicAuth, IStorageManager, PluginOptions, Config } from '@verdaccio/types';
 import { Router, Request, Response, NextFunction, Application } from 'express';
 import { CustomConfig } from './types/index';
