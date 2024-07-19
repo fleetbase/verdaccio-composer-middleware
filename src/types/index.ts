@@ -1,3 +1,6 @@
 import { Config } from '@verdaccio/types';
 
-export interface CustomConfig extends Config {}
+export interface ComposerMiddlewareConfig extends Config {
+    fleetbaseHost: string;
+    fleetbaseApiKey: string;
+}
