@@ -1,6 +1,6 @@
 {
     "name": "@fleetbase/verdaccio-composer-middleware",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Middleware to handle composer dependency request.",
     "keywords": [
         "verdaccio",
@@ -28,8 +28,9 @@
         "node": ">=12"
     },
     "dependencies": {
-        "@fleetbase/verdaccio-fleetbase-s3-storage": "0.0.1",
+        "@fleetbase/verdaccio-fleetbase-s3-storage": "0.0.2",
         "@verdaccio/commons-api": "10.2.0",
+        "axios": "^1.7.2",
         "express": "4.18.1",
         "module-alias": "^2.2.3"
     },
