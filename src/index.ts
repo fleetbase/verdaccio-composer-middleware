@@ -29,7 +29,8 @@ export default class ComposerMiddleware implements IPluginMiddleware<ComposerMid
                 // Extract bearer token from Authorization header
                 const authHeader = req.headers.authorization;
                 if (!authHeader || !authHeader.startsWith('Bearer ')) {
-                    return res.status(401).json({ error: 'Unauthorized' });
+                    // return res.status(401).json({ error: 'Unauthorized' });
+                    return res.json({ packages: {} });
                 }
                 const token = authHeader.slice(7);
 
@@ -40,10 +41,12 @@ export default class ComposerMiddleware implements IPluginMiddleware<ComposerMid
                 } catch (authError: unknown) {
                     if (axios.isAxiosError(authError) && authError.response) {
                         this.logger.error({ error: authError.response.data }, 'Authentication failed: @{error}');
-                        return res.status(authError.response.status ?? 401).json(authError.response.data);
+                        // return res.status(authError.response.status ?? 401).json(authError.response.data);
+                        return res.json({ packages: {} });
                     } else if (authError instanceof Error) {
                         this.logger.error({ error: authError.message }, 'Authentication failed: @{error}');
-                        return res.status(500).json({ error: 'Internal Server Error' });
+                        // return res.status(500).json({ error: 'Internal Server Error' });
+                        return res.json({ packages: {} });
                     }
                 }
 
@@ -56,7 +59,8 @@ export default class ComposerMiddleware implements IPluginMiddleware<ComposerMid
                 // Ensure allPackages.packages is an object
                 if (typeof allPackages.packages !== 'object') {
                     this.logger.error({ error: 'Invalid package format' }, 'Error fetching composer.json files');
-                    return res.status(500).send('Internal Server Error');
+                    // return res.status(500).send('Internal Server Error');
+                    return res.json({ packages: {} });
                 }
 
                 // Filter out unauthorized packages
